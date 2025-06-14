@@ -160,3 +160,47 @@ Created with creative stubbornness by [hotheadhacker](https://github.com/hothead
 ## 📄 License
 
 MIT — do whatever, just don’t say yes when you should say no.
+
+---
+# Deploying to GitHub Pages
+
+_(Assuming you have a package and/or directory ready to publish.)_
+
+## Step 1: Add Homepage to `package.json`
+In the root of your `package.json`, add:
+
+```json
+"homepage": "https://{pages-endpoint}/{repo}"
+```
+
+- `{pages-endpoint}`: The `blah.github.io` endpoint you set in **Settings → Pages** in your repository.
+- `{repo}`: The name of your repository.
+
+## Step 2: Install `gh-pages`
+Run:
+
+```sh
+npm install --global gh-pages --save-dev
+```
+
+- `--global`: Ensures the bin file is on your PATH.
+- `--save-dev`: Adds `gh-pages` as a dependency in your `package.json`.
+
+## Step 3: Build and Deploy
+Execute:
+
+```sh
+npm run build && gh-pages -d build
+```
+
+- `-d`: Specifies the output build directory.
+- The standard directory is `build`, but if yours is different (e.g., `public`), adjust accordingly.
+
+## Step 4: Configure GitHub Pages
+In **Settings → Pages**:
+- Select `gh-pages` as the branch to host.
+- Leave the directory as `/` (root).
+
+Once built, your site should be available at your `github.io` endpoint.
+
+**Happy Dev-ing!**
