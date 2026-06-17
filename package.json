@@ -2,7 +2,7 @@
   "name": "no-as-service",
   "version": "1.0.0",
   "description": "A lightweight API that returns random rejection or no reasons.",
-  "homepage": "https://joshbooker.github.io/no",
+  "homepage": "https://no.joshuabooker.com",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
