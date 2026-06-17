@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "mkdir -p build && cp index.html build/index.html && rm -rf build/assets && cp -R assets build/assets",
+    "build": "mkdir -p build && cp index.html build/index.html && rm -rf build/assets && if [ -d assets ]; then cp -R assets build/assets; fi",
     "deploy": "gh-pages -d build"
   },
   "author": "hotheadhacker",
