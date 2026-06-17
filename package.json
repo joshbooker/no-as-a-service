@@ -2,12 +2,18 @@
   "name": "no-as-service",
   "version": "1.0.0",
   "description": "A lightweight API that returns random rejection or no reasons.",
+  "homepage": "https://joshbooker.github.io/no-as-a-service",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "mkdir -p build && cp index.html build/index.html && rm -rf build/assets && cp -R assets build/assets",
+    "deploy": "gh-pages -d build"
   },
   "author": "hotheadhacker",
   "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  },
   "dependencies": {
     "express": "^4.18.2",
     "express-rate-limit": "^7.0.0"
